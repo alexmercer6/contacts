@@ -6,6 +6,11 @@ import { Link } from "react-router-dom"
 
 function Contacts() {
     const [contacts, setContacts] = useState([])
+    const [search, setSearch] = useState("")
+
+    const searchContacts = (e) => {
+        setSearch(e.target.value)
+    }
     useEffect(() => {
         const getContacts = async () => {
             const response = await axios.get(
@@ -17,16 +22,23 @@ function Contacts() {
     }, [])
     return (
         <div>
+            <input type="text" onChange={searchContacts} />
             <ul>
-                {contacts.map((contact) => {
-                    return (
-                        <li key={contact.id}>
-                            <Link to={`/contact/${contact.id}`}>
-                                {contact.name}
-                            </Link>
-                        </li>
+                {contacts
+                    .filter((contact) =>
+                        contact.name
+                            .toLowerCase()
+                            .includes(search.toLowerCase())
                     )
-                })}
+                    .map((contact) => {
+                        return (
+                            <li key={contact.id}>
+                                <Link to={`/contact/${contact.id}`}>
+                                    {contact.name}
+                                </Link>
+                            </li>
+                        )
+                    })}
             </ul>
         </div>
     )
