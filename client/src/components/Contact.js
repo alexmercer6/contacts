@@ -1,26 +1,48 @@
-import React from "react"
+import axios from "axios"
+import React, { useEffect, useState } from "react"
 import { FcTwoSmartphones, FcHome, FcGlobe, FcInvite } from "react-icons/fc"
+import { useParams } from "react-router-dom"
 
-function Contact({ name, username, email, address, phone, website, company }) {
+function Contact() {
+    let params = useParams()
+    let [contact, setContact] = useState({})
+    let [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        const getContact = async () => {
+            const response = await axios.get(
+                `https://jsonplaceholder.typicode.com/users/${params.id}`
+            )
+            console.log(response.data)
+            setContact(response.data)
+            setLoading(false)
+        }
+        getContact()
+    }, [])
+
+    if (loading) {
+        return <div>Loading...</div>
+    }
+
     return (
         <div>
-            <h1>{name}</h1>
+            <h1>{contact.name}</h1>
             <p>
                 <FcInvite />
-                {email}
+                {contact.email}
             </p>
             <p>
                 <FcTwoSmartphones />
-                {phone}
+                {contact.phone}
             </p>
             <p>
                 <FcHome />
-                {address.street}, {address.suite}, {address.city},{" "}
-                {address.zipcode}
+                {contact.address.street}, {contact.address.suite},{" "}
+                {contact.address.city}, {contact.address.zipcode}
             </p>
             <p>
                 <FcGlobe />
-                {website}
+                {contact.website}
             </p>
         </div>
     )

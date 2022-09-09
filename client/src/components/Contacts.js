@@ -16,7 +16,7 @@ function Contacts() {
     }, [])
     return (
         <div>
-            {contacts.map((contact) => {
+            {/* {contacts.map((contact) => {
                 return (
                     <Contact
                         key={contact.id}
@@ -29,7 +29,7 @@ function Contacts() {
                         company={contact.company}
                     />
                 )
-            })}
+            })} */}
         </div>
     )
 }
