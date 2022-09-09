@@ -2,6 +2,7 @@ import React from "react"
 import Contact from "./Contact"
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 function Contacts() {
     const [contacts, setContacts] = useState([])
@@ -16,20 +17,17 @@ function Contacts() {
     }, [])
     return (
         <div>
-            {/* {contacts.map((contact) => {
-                return (
-                    <Contact
-                        key={contact.id}
-                        name={contact.name}
-                        email={contact.email}
-                        username={contact.username}
-                        address={contact.address}
-                        phone={contact.phone}
-                        website={contact.website}
-                        company={contact.company}
-                    />
-                )
-            })} */}
+            <ul>
+                {contacts.map((contact) => {
+                    return (
+                        <li key={contact.id}>
+                            <Link to={`/contact/${contact.id}`}>
+                                {contact.name}
+                            </Link>
+                        </li>
+                    )
+                })}
+            </ul>
         </div>
     )
 }
