@@ -23,7 +23,7 @@ function Contacts() {
     return (
         <div>
             <input type="text" onChange={searchContacts} />
-            <ul>
+            <ul className="contacts-list">
                 {contacts
                     .filter((contact) =>
                         contact.name
@@ -33,6 +33,10 @@ function Contacts() {
                     .map((contact) => {
                         return (
                             <li key={contact.id}>
+                                <div className="contact-avatar">
+                                    {contact.name.charAt(0)}
+                                </div>
+
                                 <Link to={`/contact/${contact.id}`}>
                                     {contact.name}
                                 </Link>

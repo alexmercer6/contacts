@@ -1,16 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-body {
+
+.App {
   font-family: 'Roboto', sans-serif;
 }
 
-.App {
-  
-}
-
+/* body of site */
 .content-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+/* cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  border: 1px solid lightGray;
+}
+
+/* homepage */
+
+.home-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+/* contacts */
+.contact-avatar {
+  display: inline-block;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid lightGray;
+  border-radius: 100%;
+  height: 30px;
+  width: 30px;
+}
+
+.contacts-list {
+  list-style: none;
+  padding: 0;
 }
