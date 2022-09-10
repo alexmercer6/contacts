@@ -3,14 +3,17 @@ import Contact from "./Contact"
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import Home from "./Home"
 
 function Contacts() {
     const [contacts, setContacts] = useState([])
     const [search, setSearch] = useState("")
+    const [selected, setSelected] = useState("")
 
     const searchContacts = (e) => {
         setSearch(e.target.value)
     }
+
     useEffect(() => {
         const getContacts = async () => {
             const response = await axios.get(
@@ -21,29 +24,54 @@ function Contacts() {
         getContacts()
     }, [])
     return (
-        <div>
-            <input type="text" onChange={searchContacts} />
-            <ul className="contacts-list">
-                {contacts
-                    .filter((contact) =>
-                        contact.name
-                            .toLowerCase()
-                            .includes(search.toLowerCase())
-                    )
-                    .map((contact) => {
-                        return (
-                            <li key={contact.id}>
-                                <div className="contact-avatar">
-                                    {contact.name.charAt(0)}
-                                </div>
-
-                                <Link to={`/contact/${contact.id}`}>
-                                    {contact.name}
-                                </Link>
-                            </li>
+        <div className="contacts-container">
+            <div className="contacts">
+                <input
+                    className="search-bar"
+                    type="text"
+                    onChange={searchContacts}
+                />
+                <ul className="contacts-list">
+                    {contacts
+                        .filter((contact) =>
+                            contact.name
+                                .toLowerCase()
+                                .includes(search.toLowerCase())
                         )
-                    })}
-            </ul>
+                        .sort((a, b) => a.name - b.name)
+                        .map((contact) => {
+                            return (
+                                <li
+                                    className="contact-item"
+                                    key={contact.id}
+                                    onClick={() => {
+                                        setSelected(contact.id)
+                                    }}
+                                >
+                                    <div className="contact-avatar">
+                                        {contact.name.charAt(0)}
+                                    </div>
+
+                                    <Link
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "#b81f4a",
+                                            fontSize: "30px",
+                                            margin: "20px",
+                                            fontWeight: "bold",
+                                        }}
+                                        to={`/contacts/${contact.id}/${contact.name}`}
+                                    >
+                                        {contact.name}
+                                    </Link>
+                                </li>
+                            )
+                        })}
+                </ul>
+            </div>
+            <div className="contact">
+                {selected ? <Contact selected={selected} /> : <Home />}
+            </div>
         </div>
     )
 }

@@ -16,8 +16,8 @@ function App() {
                         <Route exact path="/contacts" element={<Contacts />} />
                         <Route
                             exact
-                            path="/contact/:id"
-                            element={<Contact />}
+                            path="/contacts/:id/:contactName"
+                            element={<Contacts />}
                         />
                     </Routes>
                 </main>
