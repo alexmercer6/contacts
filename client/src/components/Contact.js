@@ -36,7 +36,9 @@ function Contact({ selected }) {
     return (
         <div style={{ width: "100%" }}>
             <div className="contact-title-container">
-                <div className="contact-avatar">{contact.name.charAt(0)}</div>
+                <div className="contact-avatar selected-contact">
+                    {contact.name.charAt(0)}
+                </div>
                 <h1>{contact.name}</h1>
                 <p>{contact.company.name}</p>
             </div>

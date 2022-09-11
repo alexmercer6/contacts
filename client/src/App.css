@@ -16,11 +16,21 @@
   gap: 10px;
   justify-content: flex-end;
   border-bottom: 1px solid lightGray;
+  padding: 0 10px;
 }
 
+.navbar-link {
+  padding: 20px;
+  border-radius: 10px;
+}
+.navbar-link:hover {
+  background-color: var(--yellow);
+  
+}
 .navbar > h1 {
   flex-grow: 1;
-  color: gray;
+  color: var(--red);
+  font-weight: bold;
 }
 
 /* body of site */
@@ -28,7 +38,7 @@
   /* display: flex;
   justify-content: center;
   align-items: center; */
-  height: 95vh;
+  height: 93vh;
 }
 
 /* cards */
@@ -63,7 +73,7 @@
 .contacts-container {
   
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 3fr;
 }
 
 .contact-avatar {
@@ -80,8 +90,15 @@
   font-size: 25px;
 }
 
+.selected-contact {
+  background-color: var(--yellow);
+  border: 2px solid var(--red);
+  color: white;
+}
+
 .contacts-list {
   overflow: scroll;
+  overflow-x: hidden;
   list-style: none;
   padding: 0 10px;
   margin: 0;
@@ -89,7 +106,7 @@
 
 .contact-item {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 2fr;
   margin-top: 20px;
   padding: 10px;
   cursor: pointer;
@@ -105,14 +122,14 @@
   display: grid;
   grid-template-columns: 1fr;
   background-color: white;
-  height: 95vh;
+  height: 93vh;
 }
 
 .contact {
   display: flex;
   justify-content: center;
   
-  height: 95vh;
+  height: 93vh;
   /* background-color: var(--red); */
   /* color: gray; */
   border-left: 1px solid lightGray;
@@ -129,6 +146,7 @@
 
 .contact-title-container > h1 {
   font-size: 40px;
+  color: var(--red);
 }
 .contact-title-container > p {
   font-size: 20px;
@@ -149,7 +167,7 @@
   height: 30px;
   font-size: 25px;
   font-weight: 200;
-  /* background-color: rgb(197, 191, 191); */
+  background-color: rgb(237, 237, 237);
   /* color: rgb(158, 158, 158); */
   border-radius: 10px;
   border: none;
@@ -161,3 +179,40 @@
 .search-bar:focus {
   outline: 0.1em solid var(--red);
 }
+
+/* Extra small devices (phones, 600px and down)
+@media only screen and (max-width: 600px) {...}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  .contacts-container {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .contacts-container {
+    grid-template-columns: 1fr;
+  }
+  .contacts-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .contacts {
+    height: 100%;
+  }
+  .contact-item {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin: 0;
+    padding: 5px 0  0  0 ;
+  }
+  .contact-info {
+    grid-template-columns: 1fr;
+  }
+} 
