@@ -41,6 +41,7 @@ function Contact({ selected }) {
                 </div>
                 <h1>{contact.name}</h1>
                 <p>{contact.company.name}</p>
+                <p>{contact.company.catchPhrase}</p>
             </div>
             <div className="contact-info">
                 <div>

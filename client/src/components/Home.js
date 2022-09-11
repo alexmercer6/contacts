@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react"
-import Card from "./Card"
-import { FcTwoSmartphones, FcHome, FcGlobe, FcInvite } from "react-icons/fc"
 import HashLoader from "react-spinners/HashLoader"
 import { Link } from "react-router-dom"
 
