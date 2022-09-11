@@ -15,10 +15,12 @@
   align-items: center;
   gap: 10px;
   justify-content: flex-end;
+  border-bottom: 1px solid lightGray;
 }
 
 .navbar > h1 {
   flex-grow: 1;
+  color: gray;
 }
 
 /* body of site */
@@ -26,7 +28,7 @@
   /* display: flex;
   justify-content: center;
   align-items: center; */
-  height: 100vh;
+  height: 95vh;
 }
 
 /* cards */
@@ -79,33 +81,66 @@
 }
 
 .contacts-list {
+  overflow: scroll;
   list-style: none;
-  padding: 0;
+  padding: 0 10px;
+  margin: 0;
 }
 
 .contact-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   margin-top: 20px;
+  padding: 10px;
   cursor: pointer;
 }
 
 .contact-item:hover {
-  filter:brightness(120%)
+  /* filter:brightness(120%) */
+  background-color: var(--yellow);
+  border-radius: 10px;
 }
 
 .contacts {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  background-color: var(--yellow);
-  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: white;
+  height: 95vh;
 }
 
 .contact {
-  height: 100vh;
-  background-color: var(--red);
-  color: white;
+  display: flex;
+  justify-content: center;
+  
+  height: 95vh;
+  /* background-color: var(--red); */
+  /* color: gray; */
+  border-left: 1px solid lightGray;
+}
+.contact-title-container {
+  border-bottom: 2px solid lightGray;
+  border-radius: 100%;
+  text-align: center;
+  padding: 20px;
+  
+  
+
+}
+
+.contact-title-container > h1 {
+  font-size: 40px;
+}
+.contact-title-container > p {
+  font-size: 20px;
+}
+
+.contact-info {
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: 20px;
+  margin: 20px;
+  font-weight: bold;
 }
 
 .search-bar {
@@ -113,10 +148,12 @@
   height: 30px;
   font-size: 30px;
   font-weight: 200;
-  color: rgb(158, 158, 158);
+  /* background-color: rgb(197, 191, 191); */
+  /* color: rgb(158, 158, 158); */
   border-radius: 10px;
   border: none;
-  margin: 40px auto;
+  margin: 40px auto 30px auto;
+  padding: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 

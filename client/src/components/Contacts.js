@@ -29,6 +29,7 @@ function Contacts() {
                 <input
                     className="search-bar"
                     type="text"
+                    placeholder="Search..."
                     onChange={searchContacts}
                 />
                 <ul className="contacts-list">
@@ -55,8 +56,8 @@ function Contacts() {
                                     <Link
                                         style={{
                                             textDecoration: "none",
-                                            color: "#b81f4a",
-                                            fontSize: "30px",
+                                            color: "black",
+                                            fontSize: "20px",
                                             margin: "20px",
                                             fontWeight: "bold",
                                         }}

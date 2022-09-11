@@ -24,25 +24,28 @@ function Contact({ selected }) {
     }
 
     return (
-        <div>
-            <h1>{contact.name}</h1>
-            <p>
-                <FcInvite />
-                {contact.email}
-            </p>
-            <p>
-                <FcTwoSmartphones />
-                {contact.phone}
-            </p>
-            <p>
-                <FcHome />
-                {contact.address.street}, {contact.address.suite},{" "}
-                {contact.address.city}, {contact.address.zipcode}
-            </p>
-            <p>
-                <FcGlobe />
-                {contact.website}
-            </p>
+        <div style={{ width: "100%" }}>
+            <div className="contact-title-container">
+                <div className="contact-avatar">{contact.name.charAt(0)}</div>
+                <h1>{contact.name}</h1>
+                <p>{contact.company.name}</p>
+            </div>
+            <div className="contact-info">
+                <p>
+                    <FcInvite /> {contact.email}
+                </p>
+
+                <p>
+                    <FcHome /> {contact.address.street}, {contact.address.suite}
+                    , {contact.address.city}, {contact.address.zipcode}
+                </p>
+                <p>
+                    <FcTwoSmartphones /> {contact.phone}
+                </p>
+                <p>
+                    <FcGlobe /> {contact.website}
+                </p>
+            </div>
         </div>
     )
 }

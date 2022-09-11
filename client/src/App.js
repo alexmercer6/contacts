@@ -22,17 +22,6 @@ function App() {
                     </Routes>
                 </main>
             </BrowserRouter>
-            <a
-                style={{
-                    color: "grey",
-                    opacity: "0.8",
-                    textDecoration: "none",
-                }}
-                href="https://www.flaticon.com/free-icons/contacts"
-                title="contacts icons"
-            >
-                Contacts icons created by Freepik - Flaticon
-            </a>
         </div>
     )
 }
