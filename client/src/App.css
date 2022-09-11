@@ -194,16 +194,19 @@
 
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
   .contacts-container {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 1fr;
+    
   }
-}
+  
+} */
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .contacts-container {
     grid-template-columns: 1fr;
+    
   }
   .contacts-list {
     display: flex;
@@ -211,7 +214,9 @@
     flex-wrap: nowrap;
     overflow-x: scroll;
     overflow-y: hidden;
+    
   }
+  
   .contacts {
     height: 100%;
   }
@@ -224,4 +229,5 @@
   .contact-info {
     grid-template-columns: 1fr;
   }
+  
 } 
