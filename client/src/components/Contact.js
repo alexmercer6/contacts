@@ -1,7 +1,7 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { FcTwoSmartphones, FcHome, FcGlobe, FcInvite } from "react-icons/fc"
-
+import HashLoader from "react-spinners/HashLoader"
 function Contact({ selected }) {
     let [contact, setContact] = useState({})
     let [loading, setLoading] = useState(true)
@@ -20,7 +20,17 @@ function Contact({ selected }) {
     }, [selected])
 
     if (loading) {
-        return <div>Loading...</div>
+        return (
+            <div
+                style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+            >
+                <HashLoader color={"#be1c4e"} loading={loading} />
+            </div>
+        )
     }
 
     return (
@@ -31,20 +41,37 @@ function Contact({ selected }) {
                 <p>{contact.company.name}</p>
             </div>
             <div className="contact-info">
-                <p>
-                    <FcInvite /> {contact.email}
-                </p>
-
-                <p>
-                    <FcHome /> {contact.address.street}, {contact.address.suite}
-                    , {contact.address.city}, {contact.address.zipcode}
-                </p>
-                <p>
-                    <FcTwoSmartphones /> {contact.phone}
-                </p>
-                <p>
-                    <FcGlobe /> {contact.website}
-                </p>
+                <div>
+                    <h1>
+                        <FcInvite />
+                    </h1>
+                    <p style={{ opacity: "0.5" }}>Email</p>
+                    <p>{contact.email}</p>
+                </div>
+                <div>
+                    <h1>
+                        <FcHome />
+                    </h1>
+                    <p style={{ opacity: "0.5" }}>Address</p>
+                    <p>
+                        {contact.address.street}, {contact.address.suite},{" "}
+                        {contact.address.city}, {contact.address.zipcode}
+                    </p>
+                </div>
+                <div>
+                    <h1>
+                        <FcTwoSmartphones />
+                    </h1>
+                    <p style={{ opacity: "0.5" }}>Mobile</p>
+                    <p>{contact.phone}</p>
+                </div>
+                <div>
+                    <h1>
+                        <FcGlobe />
+                    </h1>
+                    <p style={{ opacity: "0.5" }}>Website</p>
+                    <p>{contact.website}</p>
+                </div>
             </div>
         </div>
     )
