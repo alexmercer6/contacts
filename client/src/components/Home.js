@@ -1,21 +1,36 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import Card from "./Card"
 import { FcTwoSmartphones, FcHome, FcGlobe, FcInvite } from "react-icons/fc"
+import HashLoader from "react-spinners/HashLoader"
+import { Link } from "react-router-dom"
 
 function Home() {
+    const [showSpinner, setShowSpinner] = useState(true)
+    const hideSpinner = () => {
+        setTimeout(() => setShowSpinner(false), 2000)
+    }
+    useEffect(() => {
+        hideSpinner()
+        console.log("hi")
+    }, [])
+
+    if (showSpinner) {
+        return (
+            <div className="home-container">
+                <HashLoader color="#be1c4e" />
+            </div>
+        )
+    }
+
     return (
         <div className="home-container">
-            <div className="cards-container">
-                <Card title="Phone" icon={<FcTwoSmartphones />} />
-                <Card title="Email" icon={<FcInvite />} />
-                <Card title="Address" icon={<FcHome />} />
-                <Card title="Website" icon={<FcGlobe />} />
-            </div>
-            <div>
-                <h1>
-                    <span>Keep</span> <span>Connected</span>
-                </h1>
-            </div>
+            <h1>
+                See all your connections in one place. Click{" "}
+                <Link to="/contacts" style={{ color: "#be1c4e" }}>
+                    Contacts
+                </Link>{" "}
+                to get started.
+            </h1>
         </div>
     )
 }

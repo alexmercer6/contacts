@@ -4,6 +4,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import Home from "./Home"
+import Placeholder from "./Placeholder"
 
 function Contacts() {
     const [contacts, setContacts] = useState([])
@@ -71,7 +72,7 @@ function Contacts() {
                 </ul>
             </div>
             <div className="contact">
-                {selected ? <Contact selected={selected} /> : <Home />}
+                {selected ? <Contact selected={selected} /> : <Placeholder />}
             </div>
         </div>
     )

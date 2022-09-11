@@ -8,17 +8,15 @@ function Navbar() {
     }
     return (
         <nav className="navbar">
-            <h1>Contacts</h1>
-            <div className="navbar-link">
-                <Link to="/" style={linkStyle}>
-                    Home
-                </Link>
-            </div>
-            <div className="navbar-link">
-                <Link to="/contacts" style={linkStyle}>
-                    Contacts
-                </Link>
-            </div>
+            <h1>Connect</h1>
+
+            <Link to="/" style={linkStyle}>
+                <div className="navbar-link">Home</div>
+            </Link>
+
+            <Link to="/contacts" style={linkStyle}>
+                <div className="navbar-link">Contacts</div>
+            </Link>
         </nav>
     )
 }

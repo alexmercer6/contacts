@@ -6,6 +6,7 @@
 }
 .App {
   font-family: 'Roboto', sans-serif;
+  
 }
 
 /* navbar */
@@ -62,13 +63,20 @@
 /* homepage */
 
 .home-container {
+  height: 93vh;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
-
+/* placeholder */
+.placeholder-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 /* contacts */
 .contacts-container {
   
@@ -92,7 +100,7 @@
 
 .selected-contact {
   background-color: var(--yellow);
-  border: 2px solid var(--red);
+  /* border: 2px solid var(--red); */
   color: white;
 }
 
@@ -179,6 +187,7 @@
 .search-bar:focus {
   outline: 0.1em solid var(--red);
 }
+
 
 /* Extra small devices (phones, 600px and down)
 @media only screen and (max-width: 600px) {...}
