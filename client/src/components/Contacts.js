@@ -49,7 +49,13 @@ function Contacts() {
                                         setSelected(contact.id)
                                     }}
                                 >
-                                    <div className="contact-avatar">
+                                    <div
+                                        className={
+                                            selected === contact.id
+                                                ? "contact-avatar selected-contact"
+                                                : "contact-avatar"
+                                        }
+                                    >
                                         {contact.name.charAt(0)}
                                     </div>
 
