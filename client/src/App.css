@@ -82,6 +82,7 @@
   
   display: grid;
   grid-template-columns: 1fr 3fr;
+  
 }
 
 .contact-avatar {
@@ -110,6 +111,7 @@
   list-style: none;
   padding: 0 10px;
   margin: 0;
+  border-top: 1px solid lightGray;
 }
 
 .contact-item {
@@ -129,8 +131,10 @@
 .contacts {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: 15% 85%;
   background-color: white;
   height: 93vh;
+  
 }
 
 .contact {
@@ -219,6 +223,7 @@
   
   .contacts {
     height: 100%;
+    grid-template-rows: auto;
   }
   .contact-item {
     grid-template-columns: 1fr 1fr;

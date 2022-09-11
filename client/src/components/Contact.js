@@ -2,6 +2,8 @@ import axios from "axios"
 import React, { useEffect, useState } from "react"
 import { FcTwoSmartphones, FcHome, FcGlobe, FcInvite } from "react-icons/fc"
 import HashLoader from "react-spinners/HashLoader"
+import "animate.css"
+
 function Contact({ selected }) {
     let [contact, setContact] = useState({})
     let [loading, setLoading] = useState(true)
@@ -14,7 +16,7 @@ function Contact({ selected }) {
             )
             console.log(response.data)
             setContact(response.data)
-            setLoading(false)
+            setTimeout(() => setLoading(false), 1500)
         }
         getContact()
     }, [selected])
@@ -34,8 +36,11 @@ function Contact({ selected }) {
     }
 
     return (
-        <div style={{ width: "100%" }}>
-            <div className="contact-title-container">
+        <div
+            style={{ width: "100%" }}
+            className="animate__animated animate__fadeIn"
+        >
+            <div className="contact-title-container ">
                 <div className="contact-avatar selected-contact">
                     {contact.name.charAt(0)}
                 </div>

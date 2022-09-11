@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import HashLoader from "react-spinners/HashLoader"
 import { Link } from "react-router-dom"
+import "animate.css"
 
 function Home() {
     const [showSpinner, setShowSpinner] = useState(true)
@@ -21,7 +22,7 @@ function Home() {
     }
 
     return (
-        <div className="home-container">
+        <div className="home-container animate__animated animate__fadeIn">
             <h1>
                 See all your connections in one place. Click{" "}
                 <Link to="/contacts" style={{ color: "#be1c4e" }}>

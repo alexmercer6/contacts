@@ -4,6 +4,7 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import Placeholder from "./Placeholder"
+import "animate.css"
 
 function Contacts() {
     const [contacts, setContacts] = useState([])
@@ -25,7 +26,7 @@ function Contacts() {
     }, [])
     return (
         <div className="contacts-container">
-            <div className="contacts">
+            <div className="contacts animate__animated animate__fadeIn">
                 <input
                     className="search-bar"
                     type="text"
@@ -34,12 +35,14 @@ function Contacts() {
                 />
                 <ul className="contacts-list">
                     {contacts
+
                         .filter((contact) =>
                             contact.name
                                 .toLowerCase()
                                 .includes(search.toLowerCase())
                         )
-                        .sort((a, b) => a.name - b.name)
+                        .sort((a, b) => (a.name > b.name ? 1 : -1))
+
                         .map((contact) => {
                             return (
                                 <li
