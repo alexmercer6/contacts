@@ -31,4 +31,4 @@ npm install
 
 * [Animate.css](https://animate.style/)
 * [Axios](https://axios-http.com/docs/intro)
-* [React-router-dom[(https://reactrouter.com/en/v6.3.0/getting-started/overview)
+* [React-router-dom](https://reactrouter.com/en/v6.3.0/getting-started/overview)
