@@ -26,6 +26,10 @@ import axios from "axios"
 ```
 npm install
 ```
+* npm start to run the project locally
+```
+npm start
+```
 
 ### Documentation
 
